@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!--
+    plan_env 需要：
+    1. 订阅 /map 和 /scan
+    2. 做 TF 变换
+    3. 使用 Eigen 处理坐标
+    4. 提供 C++ 库给 bspline_opt/path_searching 
+ -->
+<package format="3">
+    <name>plan_env</name>
+    <version>0.0.0</version>
+    <description>
+        2D occupancy grid map for Ego-Planner on a mecanum-wheel robot.
+    </description>
+
+    <maintainer email="ma@todo.todo">todo</maintainer>
+    <license>MIT</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <depend>rclcpp</depend>
+
+    <!-- 消息类型 -->
+    <depend>nav_msgs</depend>
+    <depend>sensor_msgs</depend>
+    <depend>geometry_msgs</depend>
+
+    <!-- TF 变换 -->
+    <depend>tf2</depend>
+    <depend>tf2_ros</depend>
+    <depend>tf2_geometry_msgs</depend>
+
+     <!-- 数学库 -->
+    <depend>eigen</depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>
